@@ -14,6 +14,9 @@ import { ViewMemoriesComponent } from './view-memories/view-memories.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from "@angular/forms";
 
+import { AngularFireModule } from "angularfire2";
+import { AngularFireDatabaseModule } from "angularfire2/database";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +50,10 @@ import { FormsModule } from "@angular/forms";
           { path: 'view-memories', component: ViewMemoriesComponent }
         ]
       },
-    ])
+    ]),
+
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
